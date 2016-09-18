@@ -1,0 +1,14 @@
+development:
+  :rack_session_secret: <%= ENV['RACK_SESSION_SECRET'] %>
+  :spotify_client_id: <%= ENV['SPOTIFY_CLIENT_ID'] %>
+  :spotify_client_secret: <%= ENV['SPOTIFY_CLIENT_SECRET'] %>
+
+test:
+  :rack_session_secret: 'test'
+  :spotify_client_id: 'client_id'
+  :spotify_client_secret: 'client_secret'
+
+production:
+  :rack_session_secret: <%= ENV['RACK_SESSION_SECRET'] %>
+  :spotify_client_id: <%= ENV['SPOTIFY_CLIENT_ID'] %>
+  :spotify_client_secret: <%= ENV['SPOTIFY_CLIENT_SECRET'] %>

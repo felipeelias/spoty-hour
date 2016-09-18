@@ -1,0 +1,24 @@
+%p
+  Party starts at
+  = start_time.strftime("%H:%M:%S")
+
+%table
+  %thead
+    %tr
+      %th #
+      %th popularity
+      %th name
+      %th album_name
+      %th artists
+      %th duration
+      %th plays at
+  %tbody
+    - tracks.each do |track|
+      %tr
+        %td= track.fetch(:index)
+        %td= track.fetch(:popularity)
+        %td= track.fetch(:name)
+        %td= track.fetch(:album_name)[0..25]
+        %td= track.fetch(:artists).join(", ")[0..25]
+        %td= track.fetch(:formatted_duration)
+        %td= track.fetch(:plays_at).strftime("%H:%M:%S")
